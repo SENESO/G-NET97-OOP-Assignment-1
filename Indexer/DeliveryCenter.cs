@@ -1,3 +1,4 @@
+using System;
 using OOP_Assignment_1.Encapsulation;
 
 namespace OOP_Assignment_1.Indexer
@@ -73,6 +74,23 @@ namespace OOP_Assignment_1.Indexer
                 return true;
             }
             return false;
+        }
+
+        public void PrintAllShipments()
+        {
+            if (shipments == null || currentCount == 0)
+            {
+                Console.WriteLine("No shipments available.");
+                return;
+            }
+
+            Console.WriteLine("--- All Shipments ---");
+            for (int i = 0; i < currentCount; i++)
+            {
+                shipments[i].PrintShipment();
+                if (i < currentCount - 1)
+                    Console.WriteLine();
+            }
         }
         #endregion
     }
